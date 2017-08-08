@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'macos'
+    }
+    
+  }
   stages {
     stage('Unit tests') {
       steps {
