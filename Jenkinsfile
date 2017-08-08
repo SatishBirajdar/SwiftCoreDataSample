@@ -13,11 +13,7 @@ pipeline {
     }
     stage('Build project') {
       steps {
-        sh '''#archive
-xcodebuild -project CoreDataSampleApp.xcodeproj -configuration Release build -archivePath CoreDataSampleApp.xcarchive' archive
-
-#export ipa
-xcodebuild -exportArchive -archivePath CoreDataSampleApp.xcarchive' '''
+        sh 'xcodebuild build -project CoreDataSampleApp.xcodeproj -scheme CoreDataSampleApp -destination \'platform=iOS Simulator,name=iPhone 7,OS=10.3.1\''
       }
     }
   }
