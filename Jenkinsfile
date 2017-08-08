@@ -14,7 +14,7 @@ pipeline {
     stage('Build project') {
       steps {
         sh '''#archive
-xcodebuild -project CoreDataSampleApp.xcodeproj -scheme CoreDataSampleApp -configuration Release build -archivePath CoreDataSampleApp.xcarchive' archive
+xcodebuild -project CoreDataSampleApp.xcodeproj -configuration Release build -archivePath CoreDataSampleApp.xcarchive' archive
 
 #export ipa
 xcodebuild -exportArchive -archivePath CoreDataSampleApp.xcarchive' '''
